@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8" />
+   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+   <link rel="stylesheet" href="./assets/style/css/main.css" />
+   <title>Form</title>
+</head>
+
+<body>
+   <div class="container-fluid p-0 ">
+      <div class="row">
+         <!-- left -->
+         <div class="left col-5 border-end border-2 ">
+            <div class="container p-5">
+               <div class="row">
+                  <form class="p-0 needs-validation" id="myForm">
+                     <!-- input fullname -->
+                     <div class="col-12 mb-3">
+                        <label for="fullname" class="form-label">Họ & tên</label>
+                        <input type="text" class="form-control" id="fullname" required />
+                        <div class="invalid-feedback">Please enter your full name.</div>
+                     </div>
+
+                     <div class="row">
+                        <!-- input Dob -->
+                        <div class="col-md-6 col-sm-12 mb-3">
+                           <label for="dob" class="form-label">Năm sinh</label>
+                           <select class="form-select" id="dob" required></select>
+                           <div class="invalid-feedback">Please enter your date of birth.</div>
+                        </div>
+
+                        <!-- input gender -->
+                        <div class="col-md-6 col-sm-12 mb-3" style="padding-right: 0;">
+                           <!-- Label -->
+                           <div class="col-12 mt-1">
+                              <label class="form-label">Giới tính</label>
+                           </div>
+                           <!-- Option -->
+                           <div class="col-12 mt-1">
+                              <div class="form-check form-check-inline">
+                                 <input class="form-check-input" type="radio" name="genderRadio" id="nam" value="Nam"
+                                    required>
+                                 <label class="form-check-label" for="nam">Nam</label>
+                              </div>
+                              <div class="form-check form-check-inline">
+                                 <input class="form-check-input" type="radio" name="genderRadio" id="nu" value="Nữ"
+                                    required>
+                                 <label class="form-check-label" for="nu">Nữ</label>
+                              </div>
+                              <div class="form-check form-check-inline">
+                                 <input class="form-check-input" type="radio" name="genderRadio" id="khac" value="Khác"
+                                    required>
+                                 <label class="form-check-label" for="khac">Khác</label>
+                              </div>
+                              <div class="invalid-feedback">Please choose your gender.</div>
+                           </div>
+                        </div>
+                     </div>
+
+
+                     <!-- submit btn -->
+                     <div class="col-12 my-3">
+                        <button type="submit" class="btn btn-primary" id="submit-form" onclick="return false">Nhập</button>
+                        <button type="button" class="btn btn-warning" id="local_clear" onclick="return false">Delete All</button>
+                     </div>
+                  </form>
+               </div>
+            </div>
+         </div>
+
+         <!-- right -->
+         <div class="right col-7 p-0">
+            <div class="container p-5">
+               <!-- heading -->
+               <div class="row">
+                  <p>Danh sách đã nhập</p>
+               </div>
+               <!-- filter -->
+               <div class="row">
+                  <div class="col-6">
+                     <div class="d-flex align-items-center gap-2">
+                        <span>Lọc :</span>
+                        <select class="form-select" style="width:auto;" id="filter-by-dob">
+                           <option selected>Năm sinh</option>
+                        </select>
+                        <select class="form-select" style="width:auto;" id="filter-by-gender">
+                           <option selected>Giới tính</option>
+                           <option value="Nam">Nam</option>
+                           <option value="Nữ">Nữ</option>
+                           <option value="Khác">Khác</option>
+                        </select>
+                     </div>
+                  </div>
+                  <div class="col-6">
+                     <div class="d-flex align-items-center gap-2">
+                        <span>Sắp xếp : </span>
+                        <select class="form-select" style="width:auto;" id="sort-by-value">
+                           <option selected>Trường</option>
+                           <option value="fullname">Họ & tên</option>
+                           <option value="dob">Năm sinh</option>
+                           <option value="gender">Giới tính</option>
+                           <option value="createtime">Thời gian tạo</option>
+                        </select>
+                        <select class="form-select" style="width:auto;" id="sort-by-order">
+                           <option selected>Hướng</option>
+                           <option value="increase">Tăng</option>
+                           <option value="decrease">Giảm</option>
+                        </select>
+                     </div>
+                  </div>
+               </div>
+               <!-- table -->
+               <table class="table table-hover mt-5">
+                  <thead>
+                     <tr class="table-primary">
+                        <th scope="col">#</th>
+                        <th scope="col">Họ tên</th>
+                        <th scope="col">Năm sinh</th>
+                        <th scope="col">Giới tính</th>
+                        <th scope="col">Thời gian tạo</th>
+                        <th scope="col"></th>
+                     </tr>
+                  </thead>
+                  <tbody id="form-body">
+                  </tbody>
+               </table>
+
+
+            </div>
+         </div>
+      </div>
+      <!-- row -->
+   </div>
+   <!-- container -->
+
+
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+   <script type="module" src="/assets/js/main.js"></script>
+</body>
+
+</html>

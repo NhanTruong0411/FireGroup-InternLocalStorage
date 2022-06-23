@@ -1,0 +1,19 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.icon-trash a img {
+  width: 25px;
+  height: auto;
+  cursor: pointer;
+  visibility: hidden;
+}
+
+tr:hover .icon-trash a img {
+  visibility: visible;
+}
+
+/*# sourceMappingURL=main.css.map */
